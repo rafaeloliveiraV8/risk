@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribuição
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Diretorias do ambiente virtual
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Arquivos do editor
+.vscode/
+.idea/
+
+# Arquivos de log
+*.log
+
+# Arquivos de banco de dados
+*.sqlite3
+
+# Configurações locais
+local_settings.py
+
+# Arquivos de Jupyter Notebook
+.ipynb_checkpoints
+
+# Arquivos de sistema do macOS
+.DS_Store
+
+.codegpt
