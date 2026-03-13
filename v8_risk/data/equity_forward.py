@@ -188,9 +188,9 @@ def process_term(date, df_everysk_pos: pd.DataFrame, config: dict) -> pd.DataFra
     df['future_value'] = df['sec_attribute_quantity']
     df['dc']           = (end_days - start_days).astype('timedelta64[D]').astype(int)
     df['duration_mac'] = np.busday_count(start_days, end_days, holidays=holidays)
-
+    
     # Remove títulos vencidos ou com erro de data
-    mask_invalid = df['duration_mac'] <= 0
+    mask_invalid = df['duration_mac'] < 0
     if mask_invalid.any():
         print(f"⚠️  {mask_invalid.sum()} termo(s) com duration_mac <= 0 removido(s).")
         df = df[~mask_invalid].copy()
