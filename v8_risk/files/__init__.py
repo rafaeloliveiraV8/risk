@@ -23,7 +23,7 @@ from .processors import (
     TituloPublicoProcessor,
     RISK_COLUMNS,
 )
-from .data_loader import COLS as PORTFOLIO_COLS
+from .data_loader import COLS as PORTFOLIO_COLS, DICurveLoader, LoaderResult
 
 __all__ = [
     "PortfolioRiskEngine",
@@ -36,4 +36,6 @@ __all__ = [
     "TituloPublicoProcessor",
     "RISK_COLUMNS",
     "PORTFOLIO_COLS",
+    "DICurveLoader",
+    "LoaderResult",
 ]

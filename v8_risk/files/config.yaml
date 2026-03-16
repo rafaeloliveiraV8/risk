@@ -1,0 +1,57 @@
+# ══════════════════════════════════════════════════════════════════
+# Risk & Return Analytics — Configuração Global
+# ══════════════════════════════════════════════════════════════════
+
+# ── Stress Test Paramétrico ───────────────────────────────────────
+# Choques em basis points (bps) aplicados sobre o YTM atual
+# Positivo = alta de taxa (perda em PV) | Negativo = queda de taxa (ganho em PV)
+stress_parametric:
+  shocks_bps:
+    - -200
+    - -100
+    - +100
+    - +200
+    - +300
+
+# ── Stress Test Histórico ─────────────────────────────────────────
+# Cada evento define:
+#   name        : nome do cenário (vira nome da coluna no output)
+#   date_start  : início do evento
+#   date_end    : fim do evento (pico do choque)
+#   shock_bps   : choque médio observado na curva de DI futuro (em bps)
+#   description : contexto do evento
+#
+# ⚠️  Para adicionar novos eventos manualmente, basta incluir um novo
+#     bloco no formato abaixo.
+stress_historical:
+  events:
+    - name        : joesley_day
+      date_start  : "2017-05-17"
+      date_end    : "2017-05-18"
+      shock_bps   : 350
+      description : "Delacao Joesley Batista - DI futuro subiu ~350bps em 1 dia"
+
+    - name        : pandemia
+      date_start  : "2020-02-24"
+      date_end    : "2020-03-23"
+      shock_bps   : 200
+      description : "COVID-19 - DI futuro subiu ~200bps em ~20 dias uteis"
+
+    - name        : precatorios
+      date_start  : "2021-08-05"
+      date_end    : "2021-09-30"
+      shock_bps   : 180
+      description : "Crise dos Precatorios - DI futuro subiu ~180bps em ~40 dias uteis"
+
+    - name        : lula_eleito
+      date_start  : "2022-10-30"
+      date_end    : "2022-11-11"
+      shock_bps   : 150
+      description : "Eleicao Lula + incerteza fiscal - DI futuro subiu ~150bps em ~10 dias uteis"
+
+    # ── Adicione eventos personalizados abaixo ──────────────────
+    # - name        : meu_evento
+    #   date_start  : "YYYY-MM-DD"
+    #   date_end    : "YYYY-MM-DD"
+    #   shock_bps   : 000
+    #   description : "Descrição do evento"

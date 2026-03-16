@@ -10,7 +10,7 @@ import logging
 
 import pandas as pd
 
-from .processors import RISK_COLUMNS
+from v8_risk.files.processors import RISK_COLUMNS
 
 logger = logging.getLogger(__name__)
 
